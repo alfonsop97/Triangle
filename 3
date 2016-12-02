@@ -1,0 +1,108 @@
+
+package triangle;
+
+import java.util.Scanner;
+
+
+public class Triangle {
+ //private instance variables   
+private int sideA;
+private int sideB;
+private int sideC;
+
+Triangle() {
+
+}
+
+Triangle(int sideA, int sideB, int sideC) {
+    
+}
+
+public int getSideA() {
+    return sideA;
+}
+
+public void setSideA(int a) {
+    sideA = a;
+}
+
+public int getSideB() {
+    return sideB;
+}
+    
+public void setSideB(int b) {
+    sideB = b;
+}
+
+public int getSideC() {
+    return sideC;
+}
+
+public void setSideC(int c) {
+    
+    sideC = c;
+}
+
+public boolean isScalene() { 
+    //check to see if all the sides are equal in length
+    if(sideA != sideB && sideA != sideC && sideB != sideC) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+public boolean isRight() {
+    if((sideA * sideA) + (sideB * sideB) == (sideC * sideC)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+public boolean isIsosceles() {
+ if(sideA == sideB && sideA == sideC || sideB == sideC && sideB == sideA) {
+        return true;
+    }
+    else {
+        return false;
+    }  
+}
+
+public boolean isEquilateral() {
+    if(sideA == sideB && sideA == sideC && sideB == sideC) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+public boolean isValid() {
+    if(sideB + sideC > sideA) {
+        return true; 
+    } else if(sideA + sideB < sideC) {
+        return false;
+    }
+    return false;
+}
+
+public static void main(String[] args) {
+     Scanner input = new Scanner(System.in);
+     int a, b, c;
+     while(true) {
+         System.out.println("What is side a");
+         System.out.println("What is side b");
+         System.out.println("what is side c");
+         
+         Triangle T1 = new Triangle(3, 6, 9);
+         
+         System.out.print(T1);
+         System.out.print("Read in a new triangle?(-1 for no, 1 for yes): ");
+           if(input.nextInt() < 0) break;
+     }
+    }
+    
+}
